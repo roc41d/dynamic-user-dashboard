@@ -14,6 +14,10 @@ export interface getUsersResponse {
     data: User[];
 }
 
+export interface getUserResponse {
+    data: User;
+}
+
 export interface UserState {
     users: User[];
     total: number;
