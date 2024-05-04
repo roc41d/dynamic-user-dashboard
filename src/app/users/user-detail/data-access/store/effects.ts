@@ -5,7 +5,7 @@ import { UserService } from "../../../../shared/data-access/user.service";
 import { userDetailActions } from "./actions";
 import { User } from "../../../../shared/interfaces/user";
 
-export const getUserEffect = createEffect(
+export const getUserDetailEffect = createEffect(
     (
         actions$ = inject(Actions),
         userService = inject(UserService)
