@@ -13,6 +13,11 @@
                 </mat-card>
             }
           </div>
+
+          <div class="paginate">
+            <mat-paginator [length]="data.total" [pageSize]="data.users.length" (page)="onChangePage($event)">
+            </mat-paginator>
+          </div>
     } @else {
         <h1>No Data</h1>
     }

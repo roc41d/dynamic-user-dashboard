@@ -6,6 +6,7 @@ import { getUsers, selectError, selectLoading, selectTotal } from '../../data-ac
 import { AsyncPipe } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import { LoaderComponent } from '../../../../shared/ui/loader.component';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list',
@@ -13,7 +14,8 @@ import { LoaderComponent } from '../../../../shared/ui/loader.component';
   imports: [
     AsyncPipe,
     MatCardModule,
-    LoaderComponent
+    LoaderComponent,
+    MatPaginatorModule
   ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
@@ -35,5 +37,10 @@ export class ListComponent implements OnInit{
 
   loadUsers(page: number): void {
     this.store.dispatch(userActions.getUsers({ page }));
+  }
+
+  onChangePage(event: PageEvent) {
+    this.currentPage = event.pageIndex + 1;
+    this.loadUsers(this.currentPage);
   }
 }
