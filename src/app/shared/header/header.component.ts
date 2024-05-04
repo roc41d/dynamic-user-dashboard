@@ -3,9 +3,10 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged, tap } from 'rxjs';
-import { userActions } from '../../../users/user-list/data-access/store/actions';
+import { userActions } from '../../users/user-list/data-access/store/actions';
 import {MatIconModule} from '@angular/material/icon';
-import { ThemeService } from '../../data-access/theme.service';
+import { ThemeService } from '../data-access/theme.service';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ import { ThemeService } from '../../data-access/theme.service';
   imports: [
     MatToolbarModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

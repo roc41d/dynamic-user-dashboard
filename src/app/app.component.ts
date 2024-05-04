@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/feature/header/header.component';
+import { HeaderComponent } from './shared/header/header.component';
 import { ThemeService } from './shared/data-access/theme.service';
 import { NgClass } from '@angular/common';
 

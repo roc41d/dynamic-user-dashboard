@@ -4,7 +4,10 @@
     <div>
         <input matInput class="search-input" [formControl]="searchInput" placeholder="Search" type="text">
     </div>
-    <span (click)="toggleTheme()" class="change-theme-icon pointer">
+    <span 
+      (click)="toggleTheme()" 
+      class="change-theme-icon pointer pulsate-fwd" 
+      [matTooltip]="themeService.themeSignal() === 'dark' ? 'Switch to ligh mode' : 'Switch to dark mode'">
         @if (themeService.themeSignal() === 'dark'){
             <mat-icon>bedtime</mat-icon>
           } @else {
