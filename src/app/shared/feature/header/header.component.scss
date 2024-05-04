@@ -1,0 +1,15 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.search-input {
+    padding: 0.5em;
+    border-radius: 1em;
+    border: none;
+    padding: 0.5em 1.2em;
+    width: 100px;
+}
+
+.search-input:focus {
+    width: 170px;
+}
