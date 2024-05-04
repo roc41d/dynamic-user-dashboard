@@ -1,1 +1,19 @@
-<p>list works!</p>
+@if (data$ | async; as data) {
+
+    @if (data.users.length > 0) {
+        <h2>Users</h2>
+        <div class="user-list-container">
+            @for (user of data.users; track $index) {
+                <mat-card>
+                    <mat-card-header>
+                      <img mat-card-avatar [src]="user.avatar" alt="User avatar">
+                      <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
+                      <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+                    </mat-card-header>
+                </mat-card>
+            }
+          </div>
+    } @else {
+        <h1>No Data</h1>
+    }
+}
