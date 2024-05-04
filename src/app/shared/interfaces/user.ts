@@ -13,3 +13,10 @@ export interface getUsersResponse {
     total: number;
     data: User[];
 }
+
+export interface UserState {
+    users: User[];
+    total: number;
+    loading: boolean;
+    error: string | null;
+}
