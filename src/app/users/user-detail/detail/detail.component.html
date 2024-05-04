@@ -16,7 +16,7 @@
                 </mat-card-actions>
               </mat-card>
         </div>
-    } @else {
+    } @else if (!data.isLoading && !data.user) {
         <h1>No Data</h1>
     }
 }

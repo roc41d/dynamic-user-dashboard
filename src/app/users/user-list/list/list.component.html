@@ -12,7 +12,7 @@
             <mat-paginator [length]="data.total" [pageSize]="data.users.length" (page)="onChangePage($event)">
             </mat-paginator>
         </div>
-    } @else {
+    } @else if (!data.isLoading && data.users.length === 0) {
         <h1>No Data</h1>
     }
 }
