@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="user-card" [routerLink]="['/users', user.id]">
     <mat-card-header>
       <img mat-card-avatar [src]="user.avatar" alt="User avatar">
       <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
