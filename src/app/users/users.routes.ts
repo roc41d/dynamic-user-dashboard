@@ -4,6 +4,6 @@ export const USERS_ROUTES: Route[] = [
   {
     path: '',
     loadComponent: () =>
-      import('./user-list/feature/list/list.component').then((comp) => comp.ListComponent),
+      import('./user-list/list/list.component').then((comp) => comp.ListComponent),
   },
 ];

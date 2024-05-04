@@ -1,0 +1,18 @@
+@if (data$ | async; as data) {
+    <app-loader [isLoading]="data.isLoading"></app-loader>
+    @if (data.users.length > 0) {
+        <h2>Users</h2>
+        <div class="user-list-container">
+            @for (user of data.users; track $index) {
+                <app-user-card [user]="user"></app-user-card>
+            }
+        </div>
+
+        <div class="paginate">
+            <mat-paginator [length]="data.total" [pageSize]="data.users.length" (page)="onChangePage($event)">
+            </mat-paginator>
+        </div>
+    } @else {
+        <h1>No Data</h1>
+    }
+}
