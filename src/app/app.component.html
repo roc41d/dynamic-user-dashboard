@@ -1,4 +1,4 @@
-<div class="light">
+<div class="main" [ngClass]="themeService.themeSignal()">
   <app-header></app-header>
   <div class="content">
     <router-outlet />

@@ -6,10 +6,16 @@
     padding: 0.5em;
     border-radius: 1em;
     border: none;
-    padding: 0.5em 1.2em;
-    width: 100px;
+    padding: 0.6em 1.2em;
+    width: 120px;
+    margin-right: 1em;
 }
 
 .search-input:focus {
-    width: 170px;
+    width: 200px;
+}
+
+.change-theme-icon {
+    position: relative;
+    top: 5px;
 }

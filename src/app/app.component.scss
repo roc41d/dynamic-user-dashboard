@@ -1,4 +1,10 @@
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .content {
-    padding: 20px;
-    // height: 100vh;
+  padding: 20px;
+  flex: 1;
 }

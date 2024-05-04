@@ -4,19 +4,23 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged, tap } from 'rxjs';
 import { userActions } from '../../../users/user-list/data-access/store/actions';
+import {MatIconModule} from '@angular/material/icon';
+import { ThemeService } from '../../data-access/theme.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     MatToolbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit{
   public searchInput = new FormControl('');
+  public themeService: ThemeService = inject(ThemeService);
   private store = inject(Store);
 
   ngOnInit(): void {
@@ -33,5 +37,9 @@ export class HeaderComponent implements OnInit{
         })
       )
       .subscribe();
+  }
+
+  public toggleTheme(): void{
+    this.themeService.updateTheme();
   }
 }
